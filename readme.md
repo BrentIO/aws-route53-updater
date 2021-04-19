@@ -10,7 +10,7 @@ Update the route53Updater_settings.json file with the ZoneId and domain name to 
 This script requires several prerequisites to function.
 
 ### AWS CLI
-`sudo apt install -y awscli python3-pip`
+`sudo apt-get install -y awscli python3-pip`
 
 `aws configure`
 
