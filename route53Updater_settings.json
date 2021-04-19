@@ -1,0 +1,6 @@
+{
+    "zoneId": "ABCDEF12345",
+    "name": "server.mydomain.com",
+    "ttl": 300,
+    "type": "A"
+}
