@@ -26,6 +26,8 @@ import os
 
 applicationName = os.path.splitext(os.path.basename(__file__))[0]
 
+filePath = print(os.path.dirname(__file__)) + "/"
+
 logger = logging.getLogger(applicationName)
 
 logger.setLevel(logging.INFO)
@@ -34,7 +36,7 @@ logger.setLevel(logging.INFO)
 formatter = logging.Formatter('%(asctime)s - %(name)s - %(levelname)s - %(message)s')
 
 #Log size maximum is 10MB
-logHandler = handlers.RotatingFileHandler(applicationName + '.log', maxBytes=10485760, backupCount=1)
+logHandler = handlers.RotatingFileHandler(filePath + applicationName + '.log', maxBytes=10485760, backupCount=1)
 
 #Set the log level
 logHandler.setLevel(logging.INFO)
@@ -51,7 +53,7 @@ def main():
     try:
 
         #Get the settings file
-        with open('route53Updater_settings.json') as settingsFile:
+        with open(filePath + 'route53Updater_settings.json') as settingsFile:
             settings = json.load(settingsFile)
 
         #Retrieve the IP address from the external server
