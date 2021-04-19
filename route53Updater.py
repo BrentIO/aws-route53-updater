@@ -21,12 +21,12 @@ import os
 ##     aws configure                                                                    ##
 ##                                                                                      ##
 ##    Python Requirements                                                               ##
-##     pip3 install requests, boto3                                                     ##
+##     pip3 install requests boto3                                                      ##
 ##########################################################################################
 
 applicationName = os.path.splitext(os.path.basename(__file__))[0]
 
-filePath = print(os.path.dirname(__file__)) + "/"
+filePath = os.path.dirname(__file__) + "/"
 
 logger = logging.getLogger(applicationName)
 
