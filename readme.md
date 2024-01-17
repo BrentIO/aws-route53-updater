@@ -16,3 +16,23 @@ This script requires several prerequisites to function.
 
 ### Python Requirements
 `pip3 install requests boto3`
+
+## IAM Policy
+Modify the policy below and attach it to the AWS IAM user that is configured in `aws configure`
+
+```
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Effect": "Allow",
+            "Action": [
+                "route53:ChangeResourceRecordSets"
+            ],
+            "Resource": [
+                "arn:aws:route53:::hostedzone/[ZoneID]"
+            ]
+        }
+    ]
+}
+```
